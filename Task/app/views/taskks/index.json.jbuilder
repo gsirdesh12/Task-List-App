@@ -1,0 +1,1 @@
+json.array! @taskks, partial: 'taskks/taskk', as: :taskk
