@@ -1,6 +1,12 @@
 class TaskksController < ApplicationController
   before_action :set_taskk, only: [:show, :edit, :update, :destroy]
 
+  # Using the pending scope to get all the pending tasks that haven't been completed
+  @pending_tasks = Task.pending
+
+  # Using the completed scope to get all the completed tasks
+  @completed_tasks = Task.completed
+
   # GET /taskks
   # GET /taskks.json
   def index
