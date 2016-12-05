@@ -4,8 +4,8 @@
 class Taskk < ActiveRecord::Base
   belongs_to :task_list
   # added described scopes
-  scope :completed, -> { where(is_completed_toggle: true) order(due_date: :desc) }
-  scope :pending, -> { where(is_completed_toggle: false) order(due_date: :asc) }
+  scope :completed, -> { where(is_completed_toggle: true).order(due_date: :desc) }
+  scope :pending, -> { where(is_completed_toggle: false).order(due_date: :asc) }
 
   # validate that required attributes are present and of specified type
   validates :title, presence => true

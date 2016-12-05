@@ -13,7 +13,8 @@
 <!-- Showing the past five completed tasks -->
 <h2>Completed Tasks</h2>
 <ul>
-  <% @completed_tasks[0..4].each do | task | %>
+  <%# jarp: see controller for use of .limit() %>
+  <% @completed_tasks.each do | task | %>
   <li><%= taskk.title %></li>
   <% end %>
 </ul>

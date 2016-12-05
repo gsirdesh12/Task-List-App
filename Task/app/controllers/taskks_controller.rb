@@ -1,16 +1,19 @@
 class TaskksController < ApplicationController
   before_action :set_taskk, only: [:show, :edit, :update, :destroy]
 
-  # Using the pending scope to get all the pending tasks that haven't been completed
-  @pending_tasks = Task.pending
-
-  # Using the completed scope to get all the completed tasks
-  @completed_tasks = Task.completed
 
   # GET /taskks
   # GET /taskks.json
   def index
-    @taskks = Taskk.all
+
+    #jarp: two groups of tasks for index view should be called here
+
+    # Using the pending scope to get all the pending tasks that haven't been completed
+    @pending_tasks = Taskk.pending
+
+    # Using the completed scope to get all the completed tasks
+    # jarp: you can use the SQL limit directive with this method. Best way to limit records
+    @completed_tasks = Taskk.completed.limit(5)
   end
 
   # GET /taskks/1
