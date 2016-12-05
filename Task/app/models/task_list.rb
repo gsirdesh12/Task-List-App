@@ -3,7 +3,7 @@ class TaskList < ActiveRecord::Base
 
   # validations for Task List model
   # jarp: you can add all the presence rules on one line
-  validates :name, :description, presence => true
+  validates :name, :description, :presence => true
   validates :name, uniqueness: true
   #validates :description, presence => true
 

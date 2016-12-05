@@ -6,6 +6,8 @@ class TaskksController < ApplicationController
   # GET /taskks.json
   def index
 
+    @taskks = Taskk.all
+
     #jarp: two groups of tasks for index view should be called here
 
     # Using the pending scope to get all the pending tasks that haven't been completed

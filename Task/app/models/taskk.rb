@@ -8,12 +8,16 @@ class Taskk < ActiveRecord::Base
   scope :pending, -> { where(is_completed_toggle: false).order(due_date: :asc) }
 
   # validate that required attributes are present and of specified type
-  validates :title, presence => true
-  validates :priority, presence => true
-  validates :priority, numericality: true
-  validates :priority, inclusion: { in: 1..10, message: "\"%{value}\" of priority must be between 1 and 10" }
-  validates :due_date, presence => true
-  validates :task_list_id, presence => true
+
+  # jarp: you can put all the presence rules in a single line
+    validates :title, presence: true
+    validates :priority, presence: true
+    validates :priority, numericality: true
+    validates :priority, inclusion: { in: 1..10, message: "\"%{value}\" of priority must be between 1 and 10" }
+
+    # if you re using the hash rocket (=>) the key needs to be a symbol
+    validates :due_date, :presence => true
+    validates :task_list_id, :presence => true
 
   def to_s
     name

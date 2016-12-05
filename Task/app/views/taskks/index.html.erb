@@ -15,7 +15,8 @@
 <ul>
   <%# jarp: see controller for use of .limit() %>
   <% @completed_tasks.each do | task | %>
-  <li><%= taskk.title %></li>
+  <%# this is where the typo is starting to confuse us. in this case the "task" in the pipes is the variable you are referencing %>
+  <li><%= task.title %></li>
   <% end %>
 </ul>
 
