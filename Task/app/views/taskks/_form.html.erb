@@ -33,6 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :task_list_id %><br>
+    <%# the method is "collection_select" this is causing the page to crash %>
     <%= f.collection :task_list_id, TaskList.all, :id, :name, prompt:true %>
   </div>
   <div class="actions">
