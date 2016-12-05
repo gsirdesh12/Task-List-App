@@ -2,6 +2,22 @@
 
 <h1>Listing Taskks</h1>
 
+<!-- Showing pending tasks that have not been completed -->
+<h2>Pending Tasks</h2>
+<ul>
+  <% @pending_tasks.each do | task | %>
+  <li><%= taskk.title %></li>
+  <% end %>
+</ul>
+
+<!-- Showing the past five completed tasks -->
+<h2>Completed Tasks</h2>
+<ul>
+  <% @completed_tasks[0..4].each do | task | %>
+  <li><%= taskk.title %></li>
+  <% end %>
+</ul>
+
 <table>
   <thead>
     <tr>
