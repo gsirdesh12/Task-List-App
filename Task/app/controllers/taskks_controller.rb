@@ -2,10 +2,10 @@ class TaskksController < ApplicationController
   before_action :set_taskk, only: [:show, :edit, :update, :destroy]
 
   # Using the pending scope to get all the pending tasks that haven't been completed
-  @pending_tasks = Task.pending
+  @pending_tasks = Taskk.pending
 
   # Using the completed scope to get all the completed tasks
-  @completed_tasks = Task.completed
+  @completed_tasks = Taskk.completed
 
   # GET /taskks
   # GET /taskks.json
@@ -75,6 +75,6 @@ class TaskksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def taskk_params
-      params.require(:taskk).permit(:title, :description, :priority, :due_date, :is_completed_toggle, :task_list_id)
+      params.require(:taskk).permit(:title, :description, :priority, :due_date, :is_completed_toggle, :task_list_id, :user_id)
     end
 end
