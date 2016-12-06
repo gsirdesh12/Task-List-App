@@ -2,6 +2,8 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 <h2>User's Tasks</h2>
-<% @tasks.each do | task | %>
-  <p><<%= task.title %></p>
-<% end %>
+<ol>
+  <% @tasks.each do | task | %>
+  <li><%= task.title %></li>
+  <% end %>
+</ol>
