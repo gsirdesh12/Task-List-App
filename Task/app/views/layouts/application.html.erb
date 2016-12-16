@@ -16,7 +16,7 @@
             <% if flash[:message] %>
             <p class="flash-message"><%= flash[:message] %></p>
             <% end %>
-            <%= yield %>
+            <%# yield  -- jarp: this duplicates your app. Use the yield below %>
         </div>
 
         <div id="sidebar">

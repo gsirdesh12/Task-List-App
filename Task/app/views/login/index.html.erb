@@ -5,8 +5,9 @@
 
 <%= form_tag authenticate_path do %>
   <p>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+    <%# should be username %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
   </p>
 
   <p>
